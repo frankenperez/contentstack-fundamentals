@@ -1,8 +1,8 @@
-# Contentstack Fundamentals for Front-End developers
+# Contentstack's Fundamentals for Front-End developers
 
 Fundamental concepts for Front-End developers who work with Contentstack.
 
-- [Contentstack Fundamentals for Front-End developers](#contentstack-fundamentals-for-front-end-developers)
+- [Contentstack's Fundamentals for Front-End developers](#contentstacks-fundamentals-for-front-end-developers)
   - [What is Contentstack](#what-is-contentstack)
   - [Traditional vs. Decoupled vs. Headless CMS](#traditional-vs-decoupled-vs-headless-cms)
     - [Traditional or Coupled CMS](#traditional-or-coupled-cms)
@@ -20,6 +20,10 @@ Fundamental concepts for Front-End developers who work with Contentstack.
     - [6. Publish Content](#6-publish-content)
     - [7. Fetch Content](#7-fetch-content)
   - [Resources for the Frontend Architecture](#resources-for-the-frontend-architecture)
+    - [Content Delivery APIs](#content-delivery-apis)
+    - [Contentstack DataSync](#contentstack-datasync)
+    - [Webhooks](#webhooks)
+    - [Content Delivery SDKs](#content-delivery-sdks)
   - [Know more](#know-more)
 
 ## What is Contentstack
@@ -187,6 +191,66 @@ Once you create an entry, you can publish it to one of the available publishing 
 You can fetch published content using the powerful tools and resources that Contentstack brings you to build the front-end and access the content, such as the Content Delivery APIs or the Content Delivery SDKs.
 
 ## Resources for the Frontend Architecture
+
+The Contentstack resources and the flexibility they provide are practically capable of supporting any kind of front-end or deployment architecture.
+
+### Content Delivery APIs
+
+**What is it**: The **Content Delivery API** is used to retrieve content from your Contentstack account fetching it for your application and getting JSON payload in response delivering it to your web or mobile properties. It serves content via a content delivery network (CDN). Contentstack also provides **GraphQL Content Delivery API** support and **Sync APIs**.
+
+**When to use it**:
+
+- Content Delivery APIs for any project.
+- GraphQL APIs for mobile applications.
+- Sync APIs for offline applications.
+
+**Documentation**:
+
+- [Content Delivery API](https://www.contentstack.com/docs/developers/apis/content-delivery-api/)
+- [GraphQL Content Delivery API](https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/)
+- [Sync APIs](https://www.contentstack.com/docs/developers/apis/content-delivery-api/#synchronization)
+
+### Contentstack DataSync
+
+**What is it**: Contentstack DataSync lets you sync the published data of your site with your local database.
+
+**When to use it**: If the website is likely to be lightweight and:
+
+- Users need to develop complex and customized websites quickly.
+- You want to have a database of your choice for storing content.
+- You need to ensure uninterrupted service even when Contentstack is temporarily down or slow.
+
+**Documentation**:
+
+- [Develop Apps with DataSync](https://www.contentstack.com/docs/developers/develop-apps-with-datasync)
+
+### Webhooks
+
+**What is it**: Webhooks provide a mechanism where a server-side application can notify a client-side application or any third-party app whenever the specified event occurs on the server.
+
+**When to use it**:
+
+- Create a cache of published content on the web server
+- Integrate with third-party apps
+- Notify about any changes in the app
+- Automate certain tasks
+
+**Documentation**:
+
+- [Set up Webhooks](https://www.contentstack.com/docs/developers/set-up-webhooks/)
+
+### Content Delivery SDKs
+
+**What is it**: SDKs provide all the methods that you need to query the Content Delivery APIs for creating, updating, deleting, and fetching content to build application on top of any of the following languages: JavaScript, iOS, Android, NodeJS, Java, ReactNative, PHP, Ruby, and .NET.
+
+**When to use it**:
+
+- To get started quickly and integrate Contentstack in your application based on any of the above-mentioned platforms.
+
+**Documentation**:,
+
+- [Contentstack SDKs](https://www.contentstack.com/docs/developers/#development-resources-and-sdks)
+- [Contentstack JavaScript SDK](https://www.contentstack.com/docs/developers/javascript-browser/about-javascript-delivery-sdk/)
 
 ## Know more
 
