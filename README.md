@@ -14,12 +14,12 @@ Fundamental concepts for Front-End developers who work with Contentstack.
   - [Start Using Contentstack](#start-using-contentstack)
     - [1. Create a Stack](#1-create-a-stack)
     - [2. Create a Content Type](#2-create-a-content-type)
-    - [3. Create Environment](#3-create-environment)
+    - [3. Create an Environment](#3-create-an-environment)
     - [4. Add Users to Stack and Assign Roles](#4-add-users-to-stack-and-assign-roles)
     - [5. Create Content (Entries and/or Assets)](#5-create-content-entries-andor-assets)
     - [6. Publish Content](#6-publish-content)
     - [7. Fetch Content](#7-fetch-content)
-  - [Resources for the Frontend Architecture](#resources-for-the-frontend-architecture)
+  - [Resources for the Front-End Architecture](#resources-for-the-front-end-architecture)
     - [Content Delivery APIs](#content-delivery-apis)
     - [Contentstack DataSync](#contentstack-datasync)
     - [Webhooks](#webhooks)
@@ -30,7 +30,7 @@ Fundamental concepts for Front-End developers who work with Contentstack.
 
 Contentstack is a **headless content management system**. As other well-known traditional CMSs, it provides the infrastructure to create and manage content, but it serves content in a presentation-independent way, without any single presentation layer, such as these other CMSs for which content management and presentation are tightly bounded.
 
-We can define Contentstack as a CMS backend. It provides all the backend tools that are needed to create and publish content via APIs. But it leaves the frontend tasks for the developer, providing a clear separation between content management and presentation.
+We can define Contentstack as a CMS backend. It provides all the backend tools that are needed to create and publish content via APIs. But it leaves the front-end tasks for the developer, providing a clear separation between content management and presentation.
 
 ## Traditional vs. Decoupled vs. Headless CMS
 
@@ -42,11 +42,11 @@ The **Traditional CMS** architecture tightly binds together the frontend and the
 
 In Decoupled CMS architecture, the backend and the frontend decouples into two separate systems: one for content management and other for data consumption and presentation.
 
-Once content is created in the backend, this frontend agnostic CMS architecture retrieves content via web services and APIs and delivers them to any frontend on any device or channel. Even though the backend and the frontend function independently of one another, the frontend component has a defined frontend or a specific presentation environment.
+Once content is created in the backend, this front-end agnostic CMS architecture retrieves content via web services and APIs and delivers them to any frontend on any device or channel. Even though the backend and the front-end function independently of one another, the front-end component has a defined frontend or a specific presentation environment.
 
 ### Headless CMS
 
-A Headless CMS shares almost all of the benefits provided by the Decoupled CMS thus it makes the presentation layer more flexible by eliminating the frontend system.
+A Headless CMS shares almost all of the benefits provided by the Decoupled CMS thus it makes the presentation layer more flexible by eliminating the front-end system.
 
 Headless CMS gives the development team the liberty to use the best-in-breed technology to develop the frontend, and content managers create content without worrying about how it would be displayed.
 
@@ -136,7 +136,7 @@ Content types define the structure or blueprint of your web page designed to cap
 5. **Add fields** in your content type. Click on the “Insert a field” link that appears when you hover your cursor below the existing fields.
 6. Click on either Save or Save and Close to start using your content type.
 
-### 3. Create Environment
+### 3. Create an Environment
 
 Environments correspond to one or more deployment servers or a content delivery destination where you need to publish your content.
 
@@ -190,7 +190,7 @@ Once you create an entry, you can publish it to one of the available publishing 
 
 You can fetch published content using the powerful tools and resources that Contentstack brings you to build the front-end and access the content, such as the Content Delivery APIs or the Content Delivery SDKs.
 
-## Resources for the Frontend Architecture
+## Resources for the Front-End Architecture
 
 The Contentstack resources and the flexibility they provide are practically capable of supporting any kind of front-end or deployment architecture.
 
@@ -258,3 +258,5 @@ The Contentstack resources and the flexibility they provide are practically capa
 - [Developers Documentation](https://www.contentstack.com/docs/developers/)
 - [How To Guides](https://www.contentstack.com/docs/developers/how-to-guides/)
 - [Glossary](https://www.contentstack.com/docs/overview/glossary/)
+
+_Main source_: _Contentstack Documentation_.
