@@ -12,6 +12,15 @@ Fundamental concepts for Front-End developers who work with Contentstack.
     - [Other key concepts of Contentstack](#other-key-concepts-of-contentstack)
   - [How Contentstack Works](#how-contentstack-works)
   - [Start Using Contentstack](#start-using-contentstack)
+    - [1. Create a Stack](#1-create-a-stack)
+    - [2. Create a Content Type](#2-create-a-content-type)
+    - [3. Create Environment](#3-create-environment)
+    - [4. Add Users to Stack and Assign Roles](#4-add-users-to-stack-and-assign-roles)
+    - [5. Create Content (Entries and/or Assets)](#5-create-content-entries-andor-assets)
+    - [6. Publish Content](#6-publish-content)
+    - [7. Fetch Content](#7-fetch-content)
+  - [Resources for the Frontend Architecture](#resources-for-the-frontend-architecture)
+  - [Know more](#know-more)
 
 ## What is Contentstack
 
@@ -83,3 +92,105 @@ Managing content in Contentstack is a simple 3-step process.
 3. **Publish content**. The content, once created, can be published to your website, mobile app, or any other channel. The same content can be reused for any platform.
 
 ## Start Using Contentstack
+
+To start using Contentstack, a user needs to be part of a Contentstack Organization or sign up individually.
+
+If you don’t have a Contentstack account, you can [Request a Free Trial](https://www.contentstack.com/try-for-free/).
+
+When you log in, depending on whether your account (trial account or invitation to an existing organization) your Contentstack instance might be clean.
+
+### 1. Create a Stack
+
+As you know, everything related to your site such as content types, entries, assets, localization settings, environments, and other settings reside within Stacks.
+
+1. Click on the **+ New Stack button** at the top-right corner.
+2. This opens the Create New Stack dialog box, where you need to enter the following details:
+   - Name: Enter a name for your stack.
+   - Description: Enter a specific description for your stack.
+   - Master Language: Select the primary language of the stack.
+3. Click on Create.
+   This creates your first stack.
+
+Next, you need to **model the content type** of your webpage.
+
+After enter in, you will see the **Dashboard** page that displays the recently modified entries and assets of your stack. You can customize your stack Dashboard page, by adding your own dashboard widgets or using the default dashboard widgets to personalize it.
+
+### 2. Create a Content Type
+
+Content types define the structure or blueprint of your web page designed to capture content elements such as text, images, or files.
+
+[Content Modeling](https://www.contentstack.com/docs/developers/how-to-guides/content-modeling/) helps you determine and create just the right content type that suits your needs.
+
+1. Click on the “Content Model” icon on the left navigation panel.
+2. Click on the **+ New Content Type button**.
+3. This opens the Create New Content Type form where you will need to enter the basic details of the stack.
+   - Type: Webpage or Content Block based on the structure of your webpage.
+   - Name of your content type.
+   - Content type: Single (create one-off entries) or Multiple (create multiple entries using the same content structure).
+   - Description for your content type.
+4. Click on Create.
+5. **Add fields** in your content type. Click on the “Insert a field” link that appears when you hover your cursor below the existing fields.
+6. Click on either Save or Save and Close to start using your content type.
+
+### 3. Create Environment
+
+Environments correspond to one or more deployment servers or a content delivery destination where you need to publish your content.
+
+1. Click the “Settings” icon on the left navigation panel and select Environments.
+2. Click on **+ New Environment**.
+3. A dialog box that appears to add the following details:
+   - Name: staging, development, production,...
+   - Base URL used as a prefix when the URL of an entry is generated. It is important to note that base URL would be different if using different languages. In case of mobile apps or other devices, keep it blank as they fetch content directly from Contentstack servers through APIs.
+4. Click on Add.
+
+To provide read-only access to the associated environments you can make use of **Delivery Tokens**, along with the stack API key, to retrieve published content of a specific environment via API Requests.
+
+You are now ready to start publishing/unpublishing your content in your created environment. But, before that, you can first add collaborators to your stack.
+
+### 4. Add Users to Stack and Assign Roles
+
+A user, if has the required permission, can invite other users to collaborate on a stack.
+
+1. Click the “Settings” icon on the left navigation panel and select Users & Roles.
+2. Click on the Invite User button.
+3. Enter the email ID(s) of the user(s) you wish to invite and share the stack with. You also need to assign a role(s) to the user(s) while sharing the stack.
+4. Click on Invite.
+
+Once the invited user accepts the invitation, he/she can collaborate with you on the specified stack.
+
+### 5. Create Content (Entries and/or Assets)
+
+To start adding content, you need to create an entry. Entries can only be created for existing content types.
+
+1. Click **+ New Entry**.
+2. Select the content type for which you want to add the entry and click Proceed.
+3. Add the relevant data for the fields, depending on the kind of content type selected:
+   - Title: title for your entry
+   - URL: this field will be autopopulated. You can click on the Edit icon to change it.
+   - Image: click on Browse File and select any images.
+   - Description: body content of your choice.
+4. Click on Save.
+
+### 6. Publish Content
+
+Once you create an entry, you can publish it to one of the available publishing environments.
+
+1. After creating your entry, click **Publish**.
+2. A dialog box opens with the following publishing options:
+   - Environment: select the environment.
+   - Language: select the language you wish to publish the entry.
+   - Publish At: select Publish Now or Publish Later.
+3. Click on Send.
+
+### 7. Fetch Content
+
+You can fetch published content using the powerful tools and resources that Contentstack brings you to build the front-end and access the content, such as the Content Delivery APIs or the Content Delivery SDKs.
+
+## Resources for the Frontend Architecture
+
+## Know more
+
+- [Contentstack 10 Days Lesson Plan](https://www.contentstack.com/docs/developers/new-trial-10-day-lesson-plan/)
+- [Developers Documentation](https://www.contentstack.com/docs/developers/)
+- [How To Guides](https://www.contentstack.com/docs/developers/how-to-guides/)
+- [Glossary](https://www.contentstack.com/docs/overview/glossary/)
