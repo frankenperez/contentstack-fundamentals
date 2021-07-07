@@ -3,48 +3,59 @@
 Fundamental concepts for Front-End developers who work with Contentstack.
 
 - [Contentstack's Fundamentals for Front-End developers](#contentstacks-fundamentals-for-front-end-developers)
-  - [What is Contentstack](#what-is-contentstack)
-  - [Traditional vs. Decoupled vs. Headless CMS](#traditional-vs-decoupled-vs-headless-cms)
-    - [Traditional or Coupled CMS](#traditional-or-coupled-cms)
-    - [Decoupled CMS](#decoupled-cms)
-    - [Headless CMS](#headless-cms)
-  - [Hierarchy of Data in Contentstack](#hierarchy-of-data-in-contentstack)
-    - [Other key concepts of Contentstack](#other-key-concepts-of-contentstack)
-  - [How Contentstack Works](#how-contentstack-works)
-  - [Start Using Contentstack](#start-using-contentstack)
-    - [1. Create a Stack](#1-create-a-stack)
-    - [2. Create a Content Type](#2-create-a-content-type)
-    - [3. Create an Environment](#3-create-an-environment)
-    - [4. Add Users to Stack and Assign Roles](#4-add-users-to-stack-and-assign-roles)
-    - [5. Create Content (Entries and/or Assets)](#5-create-content-entries-andor-assets)
-    - [6. Publish Content](#6-publish-content)
-    - [7. Fetch Content](#7-fetch-content)
-  - [Resources for the Front-End Architecture](#resources-for-the-front-end-architecture)
-    - [Content Delivery APIs](#content-delivery-apis)
-    - [Contentstack DataSync](#contentstack-datasync)
-    - [Webhooks](#webhooks)
-    - [Content Delivery SDKs](#content-delivery-sdks)
-  - [Know more](#know-more)
+  - [Contenstack Key Concepts](#contenstack-key-concepts)
+    - [What is Contentstack](#what-is-contentstack)
+    - [Traditional vs. Decoupled vs. Headless CMS](#traditional-vs-decoupled-vs-headless-cms)
+      - [Traditional or Coupled CMS](#traditional-or-coupled-cms)
+      - [Decoupled or Hybrid CMS](#decoupled-or-hybrid-cms)
+      - [Headless CMS](#headless-cms)
+    - [Hierarchy of Data in Contentstack](#hierarchy-of-data-in-contentstack)
+      - [Other key concepts of Contentstack](#other-key-concepts-of-contentstack)
+    - [How Contentstack Works](#how-contentstack-works)
+    - [Start Using Contentstack](#start-using-contentstack)
+      - [1. Create a Stack](#1-create-a-stack)
+      - [2. Create a Content Type](#2-create-a-content-type)
+      - [3. Create an Environment](#3-create-an-environment)
+      - [4. Add Users to Stack and Assign Roles](#4-add-users-to-stack-and-assign-roles)
+      - [5. Create Content (Entries and/or Assets)](#5-create-content-entries-andor-assets)
+      - [6. Publish Content](#6-publish-content)
+      - [7. Fetch Content](#7-fetch-content)
+    - [Resources for the Front-End Architecture](#resources-for-the-front-end-architecture)
+      - [Content Delivery APIs](#content-delivery-apis)
+      - [Contentstack DataSync](#contentstack-datasync)
+      - [Webhooks](#webhooks)
+      - [Content Delivery SDKs](#content-delivery-sdks)
+  - [Creating a website with Contentstack JavaScript SDK and Next.js](#creating-a-website-with-contentstack-javascript-sdk-and-nextjs)
+    - [JavaScript Delivery SDK](#javascript-delivery-sdk)
+    - [Pre-Requisites](#pre-requisites)
+    - [Configure Contentstack and Import Content](#configure-contentstack-and-import-content)
+      - [Configure and Build the Next.js Project](#configure-and-build-the-nextjs-project)
+    - [Install and Configure](#install-and-configure)
+  - [Resources](#resources)
+    - [Contentstack Documentation](#contentstack-documentation)
+    - [Tools and Libraries](#tools-and-libraries)
 
-## What is Contentstack
+## Contenstack Key Concepts
+
+### What is Contentstack
 
 Contentstack is a **headless content management system**. As other well-known traditional CMSs, it provides the infrastructure to create and manage content, but it serves content in a presentation-independent way, without any single presentation layer, such as these other CMSs for which content management and presentation are tightly bounded.
 
 We can define Contentstack as a CMS backend. It provides all the backend tools that are needed to create and publish content via APIs. But it leaves the front-end tasks for the developer, providing a clear separation between content management and presentation.
 
-## Traditional vs. Decoupled vs. Headless CMS
+### Traditional vs. Decoupled vs. Headless CMS
 
-### Traditional or Coupled CMS
+#### Traditional or Coupled CMS
 
 The **Traditional CMS** architecture tightly binds together the frontend and the backend. It combines everything related to an application: the application code, the content repository, the user interface for content managers, and the design templates. Due to its tightly bound nature, it is difficult to introduce any change in one component without affecting the other.
 
-### Decoupled CMS
+#### Decoupled or Hybrid CMS
 
 In Decoupled CMS architecture, the backend and the frontend decouples into two separate systems: one for content management and other for data consumption and presentation.
 
 Once content is created in the backend, this front-end agnostic CMS architecture retrieves content via web services and APIs and delivers them to any frontend on any device or channel. Even though the backend and the front-end function independently of one another, the front-end component has a defined frontend or a specific presentation environment.
 
-### Headless CMS
+#### Headless CMS
 
 A Headless CMS shares almost all of the benefits provided by the Decoupled CMS thus it makes the presentation layer more flexible by eliminating the front-end system.
 
@@ -57,7 +68,7 @@ Headless CMS gives the development team the liberty to use the best-in-breed tec
 - It provides high security and high scalability.
 - It’s easy and safe to integrate third-party applications into your application. Thus it’s possible to future-proof your content.
 
-## Hierarchy of Data in Contentstack
+### Hierarchy of Data in Contentstack
 
 In Contentstack, data is structured and categorized in four components:
 
@@ -70,7 +81,7 @@ In Contentstack, data is structured and categorized in four components:
 
 ![Hierarchy of Contentstack](./images/hierarchy_of_contentstack.jpeg)
 
-### Other key concepts of Contentstack
+#### Other key concepts of Contentstack
 
 - **Roles**. A collection of permissions that are applicable to all the users is called a Role. Using Roles, stack Owners or Admins can set specific permissions to each user.
 - **Users**. A user is any member who is able to access a particular stack in an organization.
@@ -85,7 +96,7 @@ In Contentstack, data is structured and categorized in four components:
 - **Audit logs**. All events and activities that take place in a particular stack are recorded and displayed in the Audit log. This helps the user keep a track of all items that are published, updated, deleted and the current status of the existing content.
 - **Trash**. All deleted items in Contentstack for a particular stack are stored in the Trash for a limited period of time.
 
-## How Contentstack Works
+### How Contentstack Works
 
 Managing content in Contentstack is a simple 3-step process.
 
@@ -95,7 +106,7 @@ Managing content in Contentstack is a simple 3-step process.
 2. **Create content**. Once the required content types are ready, any user can add content, which is like filling up a form. Multiple users can work together in teams to create important content in multiple languages.
 3. **Publish content**. The content, once created, can be published to your website, mobile app, or any other channel. The same content can be reused for any platform.
 
-## Start Using Contentstack
+### Start Using Contentstack
 
 To start using Contentstack, a user needs to be part of a Contentstack Organization or sign up individually.
 
@@ -103,7 +114,7 @@ If you don’t have a Contentstack account, you can [Request a Free Trial](https
 
 When you log in, depending on whether your account (trial account or invitation to an existing organization) your Contentstack instance might be clean.
 
-### 1. Create a Stack
+#### 1. Create a Stack
 
 As you know, everything related to your site such as content types, entries, assets, localization settings, environments, and other settings reside within Stacks.
 
@@ -119,7 +130,7 @@ Next, you need to **model the content type** of your webpage.
 
 After enter in, you will see the **Dashboard** page that displays the recently modified entries and assets of your stack. You can customize your stack Dashboard page, by adding your own dashboard widgets or using the default dashboard widgets to personalize it.
 
-### 2. Create a Content Type
+#### 2. Create a Content Type
 
 Content types define the structure or blueprint of your web page designed to capture content elements such as text, images, or files.
 
@@ -136,7 +147,7 @@ Content types define the structure or blueprint of your web page designed to cap
 5. **Add fields** in your content type. Click on the “Insert a field” link that appears when you hover your cursor below the existing fields.
 6. Click on either Save or Save and Close to start using your content type.
 
-### 3. Create an Environment
+#### 3. Create an Environment
 
 Environments correspond to one or more deployment servers or a content delivery destination where you need to publish your content.
 
@@ -151,7 +162,7 @@ To provide read-only access to the associated environments you can make use of *
 
 You are now ready to start publishing/unpublishing your content in your created environment. But, before that, you can first add collaborators to your stack.
 
-### 4. Add Users to Stack and Assign Roles
+#### 4. Add Users to Stack and Assign Roles
 
 A user, if has the required permission, can invite other users to collaborate on a stack.
 
@@ -162,7 +173,7 @@ A user, if has the required permission, can invite other users to collaborate on
 
 Once the invited user accepts the invitation, he/she can collaborate with you on the specified stack.
 
-### 5. Create Content (Entries and/or Assets)
+#### 5. Create Content (Entries and/or Assets)
 
 To start adding content, you need to create an entry. Entries can only be created for existing content types.
 
@@ -175,7 +186,7 @@ To start adding content, you need to create an entry. Entries can only be create
    - Description: body content of your choice.
 4. Click on Save.
 
-### 6. Publish Content
+#### 6. Publish Content
 
 Once you create an entry, you can publish it to one of the available publishing environments.
 
@@ -186,15 +197,15 @@ Once you create an entry, you can publish it to one of the available publishing 
    - Publish At: select Publish Now or Publish Later.
 3. Click on Send.
 
-### 7. Fetch Content
+#### 7. Fetch Content
 
 You can fetch published content using the powerful tools and resources that Contentstack brings you to build the front-end and access the content, such as the Content Delivery APIs or the Content Delivery SDKs.
 
-## Resources for the Front-End Architecture
+### Resources for the Front-End Architecture
 
 The Contentstack resources and the flexibility they provide are practically capable of supporting any kind of front-end or deployment architecture.
 
-### Content Delivery APIs
+#### Content Delivery APIs
 
 **What is it**: The **Content Delivery API** is used to retrieve content from your Contentstack account fetching it for your application and getting JSON payload in response delivering it to your web or mobile properties. It serves content via a content delivery network (CDN). Contentstack also provides **GraphQL Content Delivery API** support and **Sync APIs**.
 
@@ -210,7 +221,7 @@ The Contentstack resources and the flexibility they provide are practically capa
 - [GraphQL Content Delivery API](https://www.contentstack.com/docs/developers/apis/graphql-content-delivery-api/)
 - [Sync APIs](https://www.contentstack.com/docs/developers/apis/content-delivery-api/#synchronization)
 
-### Contentstack DataSync
+#### Contentstack DataSync
 
 **What is it**: Contentstack DataSync lets you sync the published data of your site with your local database.
 
@@ -224,7 +235,7 @@ The Contentstack resources and the flexibility they provide are practically capa
 
 - [Develop Apps with DataSync](https://www.contentstack.com/docs/developers/develop-apps-with-datasync)
 
-### Webhooks
+#### Webhooks
 
 **What is it**: Webhooks provide a mechanism where a server-side application can notify a client-side application or any third-party app whenever the specified event occurs on the server.
 
@@ -239,7 +250,7 @@ The Contentstack resources and the flexibility they provide are practically capa
 
 - [Set up Webhooks](https://www.contentstack.com/docs/developers/set-up-webhooks/)
 
-### Content Delivery SDKs
+#### Content Delivery SDKs
 
 **What is it**: SDKs provide all the methods that you need to query the Content Delivery APIs for creating, updating, deleting, and fetching content to build application on top of any of the following languages: JavaScript, iOS, Android, NodeJS, Java, ReactNative, PHP, Ruby, and .NET.
 
@@ -252,11 +263,90 @@ The Contentstack resources and the flexibility they provide are practically capa
 - [Contentstack SDKs](https://www.contentstack.com/docs/developers/#development-resources-and-sdks)
 - [Contentstack JavaScript SDK](https://www.contentstack.com/docs/developers/javascript-browser/about-javascript-delivery-sdk/)
 
-## Know more
+## Creating a website with Contentstack JavaScript SDK and Next.js
+
+Let's create a website built on top of Next.js and using Contentstack’s JavaScript SDK.
+
+### JavaScript Delivery SDK
+
+Contentstack provides JavaScript Delivery SDK that developers can use to create JavaScript applications and power its content from Contentstack. The Contentstack JavaScript Delivery SDK uses the **Content Delivery APIs** to fetch content from Contentstack and deliver it to a JavaScript-based application.
+
+> Note: It should not to be confused with the [JavaScript Management SDK](https://www.contentstack.com/docs/developers/nodejs/about-javascript-management-sdk/) that uses Content Management APIs and includes creating, updating, deleting, and fetching content of your account.
+
+### Pre-Requisites
+
+To get started, Contentstack JS Delivery SDK requires **NodeJS 4.4.7 or later**.
+
+Also you need a [Contentstack account](<(#start-using-contentstack)>).
+
+### Configure Contentstack and Import Content
+
+1. Log in to your Contentstack account, and create a **new stack**. Note down the master language and the stack API key as you will need later.
+
+2. Create a **management token** and note down the management token and the stack API key to import content into your stack in the next step.
+
+3. Import **content types and content** into your stack by using the Contentstack command-line interface (CLI)
+
+- **Install the CLI** globally by running:
+
+```bash
+npm install -g @contentstack/cli
+# or
+yarn global add @contentstack/cli
+```
+
+- Use the **add token command** to add the management token to this CLI session with an alias:
+
+```bash
+csdx auth:tokens:add -a <alias_for_token> -k <API_key_of_stack> -t <value_of_management_token>
+```
+
+- Download the [content zip file](https://github.com/contentstack/contentstack-nextjs-react-universal-demo/raw/master/data/contents.zip), extract it, and note down its path to use in the next step.
+
+- Import all the assets, content types, entries, languages, and environments into your stack by using the **import content command**:
+
+```bash
+csdx cm:import -a <management_token_alias> -d "<path_where_content_folder_is_stored>"
+```
+
+The command will automatically publish the imported entries and assets to all the environments.
+
+#### Configure and Build the Next.js Project
+
+For this tutorial, we have assumed that you are familiar with Next.js. If not, then please refer to the [Next.js docs](https://nextjs.org/docs) for more details.
+
+Create a new Next.js application using `create-next-app` by running:
+
+```bash
+npx create-next-app
+# or
+yarn create next-app
+```
+
+--- WORK IN PROGRESS ---
+
+### Install and Configure
+
+To use the JavaScript Delivery SDK, open the terminal and install the contentstack module via npm:
+
+```bash
+npm install contentstack
+# or
+yarn add contentstack
+```
+
+## Resources
+
+### Contentstack Documentation
 
 - [Contentstack 10 Days Lesson Plan](https://www.contentstack.com/docs/developers/new-trial-10-day-lesson-plan/)
 - [Developers Documentation](https://www.contentstack.com/docs/developers/)
 - [How To Guides](https://www.contentstack.com/docs/developers/how-to-guides/)
 - [Glossary](https://www.contentstack.com/docs/overview/glossary/)
 
-_Main source_: _Contentstack Documentation_.
+### Tools and Libraries
+
+- [NPM Contentstack Javascript SDK](https://www.npmjs.com/package/contentstack)
+- [API Reference for JavaScript Delivery SDK](https://www.contentstack.com/docs/developers/javascript-browser/api-reference/)
+
+_Main source_: _[Contentstack Documentation](https://www.contentstack.com/docs)_.
