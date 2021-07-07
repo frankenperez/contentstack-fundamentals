@@ -26,11 +26,6 @@ Fundamental concepts for Front-End developers who work with Contentstack.
       - [Webhooks](#webhooks)
       - [Content Delivery SDKs](#content-delivery-sdks)
   - [Creating a website with Contentstack JavaScript SDK and Next.js](#creating-a-website-with-contentstack-javascript-sdk-and-nextjs)
-    - [JavaScript Delivery SDK](#javascript-delivery-sdk)
-    - [Pre-Requisites](#pre-requisites)
-    - [Configure Contentstack and Import Content](#configure-contentstack-and-import-content)
-      - [Configure and Build the Next.js Project](#configure-and-build-the-nextjs-project)
-    - [Install and Configure](#install-and-configure)
   - [Resources](#resources)
     - [Contentstack Documentation](#contentstack-documentation)
     - [Tools and Libraries](#tools-and-libraries)
@@ -100,7 +95,7 @@ In Contentstack, data is structured and categorized in four components:
 
 Managing content in Contentstack is a simple 3-step process.
 
-![How CS works](images/how_contenstack_works.png)
+![How CS works](images/how_contenstack_works.png | width=500)
 
 1. **Model your content**. Define the structure of your content in a platform-independent way. This involves creating a content type and adding relevant fields such as “single-line textbox,” “date,” “file”. Adding fields is a simple drag-and-drop process.
 2. **Create content**. Once the required content types are ready, any user can add content, which is like filling up a form. Multiple users can work together in teams to create important content in multiple languages.
@@ -265,75 +260,7 @@ The Contentstack resources and the flexibility they provide are practically capa
 
 ## Creating a website with Contentstack JavaScript SDK and Next.js
 
-Let's create a website built on top of Next.js and using Contentstack’s JavaScript SDK.
-
-### JavaScript Delivery SDK
-
-Contentstack provides JavaScript Delivery SDK that developers can use to create JavaScript applications and power its content from Contentstack. The Contentstack JavaScript Delivery SDK uses the **Content Delivery APIs** to fetch content from Contentstack and deliver it to a JavaScript-based application.
-
-> Note: It should not to be confused with the [JavaScript Management SDK](https://www.contentstack.com/docs/developers/nodejs/about-javascript-management-sdk/) that uses Content Management APIs and includes creating, updating, deleting, and fetching content of your account.
-
-### Pre-Requisites
-
-To get started, Contentstack JS Delivery SDK requires **NodeJS 4.4.7 or later**.
-
-Also you need a [Contentstack account](<(#start-using-contentstack)>).
-
-### Configure Contentstack and Import Content
-
-1. Log in to your Contentstack account, and create a **new stack**. Note down the master language and the stack API key as you will need later.
-
-2. Create a **management token** and note down the management token and the stack API key to import content into your stack in the next step.
-
-3. Import **content types and content** into your stack by using the Contentstack command-line interface (CLI)
-
-- **Install the CLI** globally by running:
-
-```bash
-npm install -g @contentstack/cli
-# or
-yarn global add @contentstack/cli
-```
-
-- Use the **add token command** to add the management token to this CLI session with an alias:
-
-```bash
-csdx auth:tokens:add -a <alias_for_token> -k <API_key_of_stack> -t <value_of_management_token>
-```
-
-- Download the [content zip file](https://github.com/contentstack/contentstack-nextjs-react-universal-demo/raw/master/data/contents.zip), extract it, and note down its path to use in the next step.
-
-- Import all the assets, content types, entries, languages, and environments into your stack by using the **import content command**:
-
-```bash
-csdx cm:import -a <management_token_alias> -d "<path_where_content_folder_is_stored>"
-```
-
-The command will automatically publish the imported entries and assets to all the environments.
-
-#### Configure and Build the Next.js Project
-
-For this tutorial, we have assumed that you are familiar with Next.js. If not, then please refer to the [Next.js docs](https://nextjs.org/docs) for more details.
-
-Create a new Next.js application using `create-next-app` by running:
-
-```bash
-npx create-next-app
-# or
-yarn create next-app
-```
-
---- WORK IN PROGRESS ---
-
-### Install and Configure
-
-To use the JavaScript Delivery SDK, open the terminal and install the contentstack module via npm:
-
-```bash
-npm install contentstack
-# or
-yarn add contentstack
-```
+Go to [Lab directory](./lab) and follow the steps to create a website using Contentstack and Next.js.
 
 ## Resources
 
