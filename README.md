@@ -95,7 +95,7 @@ In Contentstack, data is structured and categorized in four components:
 
 Managing content in Contentstack is a simple 3-step process.
 
-<img src="images/how_contenstack_works.png" alt="How CS works" width="500">
+![How CS works](images/how_contenstack_works.png)
 
 1. **Model your content**. Define the structure of your content in a platform-independent way. This involves creating a content type and adding relevant fields such as “single-line textbox,” “date,” “file”. Adding fields is a simple drag-and-drop process.
 2. **Create content**. Once the required content types are ready, any user can add content, which is like filling up a form. Multiple users can work together in teams to create important content in multiple languages.
