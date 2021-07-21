@@ -98,24 +98,7 @@ yarn create next-app
 
 ### Install Additional Libraries
 
-Additional libraries to be installed:
-
-- Styled Components
-- Babel
-
-```bash
-npm install -D babel-core
-# or
-yarn add -D babel-core
-```
-
-Create a `.babelrc` file and add:
-
-```json
-{
-  "presets": ["next/babel"]
-}
-```
+We can install additional libraries to add support to TypeScript, SASS, Styled Components, etc.
 
 ### Configure Environment Variables
 
